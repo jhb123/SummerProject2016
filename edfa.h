@@ -14,17 +14,16 @@ public:
     explicit edfa(QObject *parent = 0);
     ~edfa();
     void setUpPort(QString name);
-    void EDFAsetPower(float value);
+    bool EDFASetPower(float value);
     void EDFAOn();
     void EDFAOff();
     QString EDFAReadPh1();
     QString EDFAReadPh2();
 
 private:
+
+    QByteArray buf;
     QSerialPort *serial;
-
-
-
 };
 
 #endif // EDFA_H
